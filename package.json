@@ -14,10 +14,18 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "autotest.run",
+          "group": "2_workspace"
+        }
+      ]
+    },
     "commands": [
       {
-        "command": "autotest.helloWorld",
-        "title": "Hello World"
+        "command": "autotest.run",
+        "title": "Run tests for this file"
       }
     ]
   },
