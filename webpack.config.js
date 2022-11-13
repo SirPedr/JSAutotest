@@ -1,27 +1,27 @@
 //@ts-check
 
-'use strict';
+"use strict";
 
-const path = require('path');
+const path = require("path");
 
 //@ts-check
 /** @typedef {import('webpack').Configuration} WebpackConfig **/
 
 /** @type WebpackConfig */
 const extensionConfig = {
-  target: 'node',
-	mode: 'none',
-  entry: './src/extension.ts',
+  target: "node",
+  mode: "none",
+  entry: "./src/extension.ts",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'extension.js',
-    libraryTarget: 'commonjs2'
+    path: path.resolve(__dirname, "dist"),
+    filename: "extension.js",
+    libraryTarget: "commonjs2"
   },
   externals: {
-    vscode: 'commonjs vscode'
+    vscode: "commonjs vscode"
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: [".ts", ".js"]
   },
   module: {
     rules: [
@@ -30,16 +30,16 @@ const extensionConfig = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'ts-loader'
+            loader: "ts-loader"
           }
         ]
       }
     ]
   },
-  devtool: 'nosources-source-map',
+  devtool: "nosources-source-map",
   infrastructureLogging: {
-    level: "log",
+    level: "log"
   }
 };
 
-module.exports = [ extensionConfig ];
+module.exports = [extensionConfig];

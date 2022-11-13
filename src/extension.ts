@@ -1,11 +1,9 @@
 import * as vscode from "vscode";
 
-export function activate(context: vscode.ExtensionContext) {
+export const activate = (context: vscode.ExtensionContext) => {
   const disposable = vscode.commands.registerCommand("autotest.run", () => {
-    console.log("Opa");
+    vscode.window.showInformationMessage("Acho que funciona");
   });
 
   context.subscriptions.push(disposable);
-}
-
-export function deactivate() {}
+};
