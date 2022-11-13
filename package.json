@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:autotest.helloWorld"
+    "onCommand:autotest.run"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -18,7 +18,8 @@
       "explorer/context": [
         {
           "command": "autotest.run",
-          "group": "2_workspace"
+          "group": "2_workspace",
+          "when": "resourceLangId == typescript || resourceLangId == javascript"
         }
       ]
     },
