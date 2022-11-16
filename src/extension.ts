@@ -1,15 +1,10 @@
 import * as vscode from "vscode";
+import commands from "./commands";
 
 export const activate = (context: vscode.ExtensionContext) => {
-  const disposable = vscode.commands.registerCommand(
-    "autotest.run",
-    (uri: vscode.Uri) => {
-      const filePath = uri.path;
-      const terminal = vscode.window.createTerminal("Autotest");
-
-      terminal.sendText(`yarn test ${filePath}`);
-    }
+  const disposables = commands.map(command =>
+    vscode.commands.registerCommand(command.name, command.handler)
   );
 
-  context.subscriptions.push(disposable);
+  context.subscriptions.push(...disposables);
 };
