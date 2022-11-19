@@ -28,7 +28,23 @@
         "command": "autotest.run",
         "title": "Run tests for this file"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Autotest",
+      "properties": {
+        "autotest.packageManager": {
+          "type": "string",
+          "description": "Define which package manager will be used to run the test command",
+          "default": "npm",
+          "enum": ["npm", "yarn"]
+        },
+        "autotest.testRunnerScriptName": {
+          "type": "string",
+          "description": "The script name defined in your package.json that will trigger the test runner",
+          "default": "test"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
