@@ -45,6 +45,11 @@
           "type": "string",
           "description": "The script name defined in your package.json that will trigger the test runner",
           "default": "test"
+        },
+        "autotest.testFilePattern": {
+          "type": "string",
+          "markdownDescription": "A **glob** indicating the name pattern used for test files. You can use the `[name]` variable anywhere in the pattern to indicate the base filename",
+          "default": "[name].test.{js,jsx,ts,tsx}"
         }
       }
     }

@@ -8,17 +8,27 @@ const commandName = "autotest.run";
 
 const DEFAULT_PACKAGE_MANAGER = "npm";
 const DEFAULT_SCRIPT_NAME = "test";
+const DEFAULT_TEST_FILE_PATTERN = "[name].test.{js,jsx,ts,tsx}";
 
 const handler = async (uri: vscode.Uri) => {
+  const extensionConfig = vscode.workspace.getConfiguration("autotest");
+  const testFilePattern = extensionConfig.get(
+    "testFilePattern",
+    DEFAULT_TEST_FILE_PATTERN
+  );
+
   const fileName = path.basename(uri.path);
-  const isTestFile = minimatch(fileName, "*.test.{js,jsx,ts,tsx}");
+  const isTestFile = minimatch(
+    fileName,
+    testFilePattern.replace("[name]", "*")
+  );
 
   let testFilePath = uri.path;
 
   if (!isTestFile) {
     const [nameWithoutExtension] = fileName.split(".");
     const [testFile] = await vscode.workspace.findFiles(
-      `**/${nameWithoutExtension}.test.{js,jsx,ts,tsx}`,
+      `**/${testFilePattern.replace("[name]", nameWithoutExtension)}`,
       null,
       1
     );
@@ -35,7 +45,6 @@ const handler = async (uri: vscode.Uri) => {
   }
 
   const terminal = findTerminalWithName(vscode.window.terminals, "Autotest");
-  const extensionConfig = vscode.workspace.getConfiguration("autotest");
 
   terminal.show();
 
