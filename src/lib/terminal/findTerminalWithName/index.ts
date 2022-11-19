@@ -1,9 +1,10 @@
 import { Terminal, window } from "vscode";
 
-export const findAutotestTerminal = (terminals: readonly Terminal[]) => {
-  const existingTerminal = terminals.find(
-    terminal => terminal.name === "Autotest"
-  );
+export const findTerminalWithName = (
+  terminals: readonly Terminal[],
+  name: string
+) => {
+  const existingTerminal = terminals.find(terminal => terminal.name === name);
 
   if (existingTerminal) {
     return existingTerminal;
