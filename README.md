@@ -1,71 +1,35 @@
-# autotest README
+# JS Autotest
 
-This is the README for your extension "autotest". After writing up a brief description, we recommend including the following sections.
+Running tests for your files made easy. This extension allows you to run your test command on one or more files with only 2 clicks, without having to copy the file paths every time or running all your tests at once.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Supported files
+JS Autotest has built-in support for **JS, JSX, TS and TSX files**.
 
-For example if there is an image subfolder under your extension project workspace:
+### Running test command for a file
 
-\!\[feature X\]\(images/feature-x.png\)
+> Tip: You can also run this command  on non-test files. In this case, Autotest will try to find the correspondent test file according to your `autotest.testFilePattern` configuration.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Right-click any of the supported files, then select the option _Run tests for this file_. Autotest will then run your test script passing the file path as an argument to that script.
+
+![Example](https://im2.ezgif.com/tmp/ezgif-2-18c4a4e4f3.gif)
+
+### Running test command for multiple files
+To be implemented.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+In order to use this extension you need **VSCode 1.73.0** or above.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-- `myExtension.enable`: Enable/disable this extension.
-- `myExtension.thing`: Set to `blah` to do something.
+- `autotest.packageManager` (default: `npm`): Which package manager are you using in your project, like _yarn_ or _npm_.
 
-## Known Issues
+- `autotest.testRunnerScriptName` (default: `test`): The name of the script thar runs your tests.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-- [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-- Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-- Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- `autottest.tesFilePattern` (default: `[name].test.{js,jsx,ts,tsx}`): This is a glob that indicates the pattern name for your test files based on the implementation file nime.
+    - You can use the `[name]` variable in the pattern to indicate where the original file name is placed.
+    - You can use any pattern that the [glob](https://www.npmjs.com/package/glob) package can read and parse.

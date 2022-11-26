@@ -1,6 +1,6 @@
 {
-  "name": "autotest",
-  "displayName": "Autotest",
+  "name": "js-autotest",
+  "displayName": "JSAutotest",
   "description": "Running test for files made easy",
   "version": "0.0.1",
   "engines": {
