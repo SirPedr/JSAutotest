@@ -17,7 +17,18 @@ const handler = async (uri: vscode.Uri, context: vscode.ExtensionContext) => {
     return;
   }
 
-  const currentGroup = context.workspaceState.get("autotest_group", []);
+  const currentGroup = context.workspaceState.get<string[]>(
+    "autotest_group",
+    []
+  );
+  const fileAlreadyInGroup = currentGroup.some(path => path === testFilePath);
+
+  if (fileAlreadyInGroup) {
+    vscode.window.showWarningMessage(
+      `File ${testFilePath} is already on the test group`
+    );
+    return;
+  }
 
   context.workspaceState.update("autotest_group", [
     ...currentGroup,
