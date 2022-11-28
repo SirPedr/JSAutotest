@@ -11,7 +11,8 @@
   ],
   "activationEvents": [
     "onCommand:autotest.run",
-    "onCommand:autotest.addToGroup"
+    "onCommand:autotest.addToGroup",
+    "onCommand:autotest.removeFromGroup"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -26,6 +27,11 @@
           "command": "autotest.addToGroup",
           "group": "2_workspace",
           "when": "resourceLangId == typescript || resourceLangId == javascript"
+        },
+        {
+          "command": "autotest.removeFromGroup",
+          "group": "2_workspace",
+          "when": "resourceLangId == typescript || resourceLangId == javascript"
         }
       ]
     },
@@ -37,6 +43,10 @@
       {
         "command": "autotest.addToGroup",
         "title": "Add to test group"
+      },
+      {
+        "command": "autotest.removeFromGroup",
+        "title": "Remove from test group"
       }
     ],
     "configuration": {

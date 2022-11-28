@@ -24,7 +24,7 @@ const handler = async (uri: vscode.Uri, context: vscode.ExtensionContext) => {
     testFilePath
   ]);
 
-  vscode.window.showInformationMessage(`Added ${testFilePath} to test group.`);
+  vscode.window.showInformationMessage(`Added ${testFilePath} to test group`);
 };
 
 export default { name, handler };
