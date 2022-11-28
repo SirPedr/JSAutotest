@@ -10,7 +10,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:autotest.run"
+    "onCommand:autotest.run",
+    "onCommand:autotest.addToGroup"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -20,6 +21,11 @@
           "command": "autotest.run",
           "group": "2_workspace",
           "when": "resourceLangId == typescript || resourceLangId == javascript"
+        },
+        {
+          "command": "autotest.addToGroup",
+          "group": "2_workspace",
+          "when": "resourceLangId == typescript || resourceLangId == javascript"
         }
       ]
     },
@@ -27,6 +33,10 @@
       {
         "command": "autotest.run",
         "title": "Run tests for this file"
+      },
+      {
+        "command": "autotest.addToGroup",
+        "title": "Add to test group"
       }
     ],
     "configuration": {
