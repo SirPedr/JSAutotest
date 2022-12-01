@@ -12,7 +12,8 @@
   "activationEvents": [
     "onCommand:autotest.run",
     "onCommand:autotest.addToGroup",
-    "onCommand:autotest.removeFromGroup"
+    "onCommand:autotest.removeFromGroup",
+    "onCommand:autotest.runInGroup"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -47,6 +48,10 @@
       {
         "command": "autotest.removeFromGroup",
         "title": "Remove from test group"
+      },
+      {
+        "command": "autotest.runInGroup",
+        "title": "Run tests for test group"
       }
     ],
     "configuration": {

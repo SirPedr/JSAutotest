@@ -1,21 +1,16 @@
 import * as vscode from "vscode";
 import { DEFAULT_CONFIGS } from "../../config/extension";
-import { getTestFilePath } from "../../lib/path/getTestFilePath";
-import { findTerminalWithName } from "../../lib/terminal/findTerminalWithName";
 import { createTestRunnerCommand } from "../../lib/createTestRunnerCommand";
+import { findTerminalWithName } from "../../lib/terminal/findTerminalWithName";
 
-const commandName = "autotest.run";
+const name = "autotest.runInGroup";
 
-const handler = async (uri: vscode.Uri) => {
+const handler = (_: vscode.Uri, context: vscode.ExtensionContext) => {
   const extensionConfig = vscode.workspace.getConfiguration("autotest");
-  const testFilePattern = extensionConfig.get(
-    "testFilePattern",
-    DEFAULT_CONFIGS.testFilePattern
-  );
+  const testGroup = context.workspaceState.get<string[]>("autotest_group", []);
 
-  const testFilePath = await getTestFilePath(uri.path, testFilePattern);
-
-  if (!testFilePath) {
+  if (!testGroup.length) {
+    vscode.window.showErrorMessage("There are no files in the test group");
     return;
   }
 
@@ -25,7 +20,7 @@ const handler = async (uri: vscode.Uri) => {
 
   terminal.sendText(
     createTestRunnerCommand({
-      filePath: testFilePath,
+      filePath: testGroup.join(" "),
       packageManager: extensionConfig.get(
         "packageManager",
         DEFAULT_CONFIGS.packageManager
@@ -38,4 +33,4 @@ const handler = async (uri: vscode.Uri) => {
   );
 };
 
-export default { name: commandName, handler };
+export default { name, handler };

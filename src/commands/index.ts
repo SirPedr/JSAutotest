@@ -1,7 +1,13 @@
 import runTestsCommand from "./run";
 import addToGroupCommand from "./addToGroup";
-import removeFromGroupCommnad from "./removeFromGroup";
+import removeFromGroupCommand from "./removeFromGroup";
+import runTestsInGroupCommand from "./runTestsInGroup";
 
-const commands = [runTestsCommand, addToGroupCommand, removeFromGroupCommnad];
+const commands = [
+  runTestsCommand,
+  addToGroupCommand,
+  removeFromGroupCommand,
+  runTestsInGroupCommand
+];
 
 export default commands;
