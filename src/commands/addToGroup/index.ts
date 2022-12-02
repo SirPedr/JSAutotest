@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { DEFAULT_CONFIGS } from "../../config/extension";
 import { getTestFilePath } from "../../lib/path/getTestFilePath";
+import { ContextMenuCommand } from "../../types";
 
 const name = "autotest.addToGroup";
 
@@ -38,4 +39,10 @@ const handler = async (uri: vscode.Uri, context: vscode.ExtensionContext) => {
   vscode.window.showInformationMessage(`Added ${testFilePath} to test group`);
 };
 
-export default { name, handler };
+const addToGroupCommand: ContextMenuCommand = {
+  name,
+  handler,
+  requiresUri: true
+};
+
+export default addToGroupCommand;

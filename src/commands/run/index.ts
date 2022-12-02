@@ -1,8 +1,9 @@
 import * as vscode from "vscode";
 import { DEFAULT_CONFIGS } from "../../config/extension";
+import { createTestRunnerCommand } from "../../lib/createTestRunnerCommand";
 import { getTestFilePath } from "../../lib/path/getTestFilePath";
 import { findTerminalWithName } from "../../lib/terminal/findTerminalWithName";
-import { createTestRunnerCommand } from "../../lib/createTestRunnerCommand";
+import type { ContextMenuCommand } from "../../types";
 
 const commandName = "autotest.run";
 
@@ -38,4 +39,10 @@ const handler = async (uri: vscode.Uri) => {
   );
 };
 
-export default { name: commandName, handler };
+const runTestsCommand: ContextMenuCommand = {
+  name: commandName,
+  handler,
+  requiresUri: true
+};
+
+export default runTestsCommand;

@@ -1,6 +1,8 @@
 import * as vscode from "vscode";
 import { DEFAULT_CONFIGS } from "../../config/extension";
 import { getTestFilePath } from "../../lib/path/getTestFilePath";
+import { ContextMenuCommand } from "../../types";
+
 const name = "autotest.removeFromGroup";
 
 const handler = async (uri: vscode.Uri, context: vscode.ExtensionContext) => {
@@ -36,4 +38,10 @@ const handler = async (uri: vscode.Uri, context: vscode.ExtensionContext) => {
   );
 };
 
-export default { name, handler };
+const removeFromGroupCommand: ContextMenuCommand = {
+  name,
+  handler,
+  requiresUri: true
+};
+
+export default removeFromGroupCommand;
