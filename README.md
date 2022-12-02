@@ -2,6 +2,17 @@
 
 Running tests for your files made easy. This extension allows you to run your test command on one or more files with only 2 clicks, without having to copy the file paths every time or running all your tests at once.
 
+## Table of Contents
+- [Features](#features)
+    - [Supported files](#supported-files)
+    - [Running test command for a file](#running-test-command-for-a-file)
+    - [Running test command for multiple files](#running-test-command-for-multiple-files)
+        - [Adding a file to the test group](#adding-a-file-to-the-test-group)
+        - [Removing a file from the test group](#removing-a-file-from-the-test-group)
+        - [Running all tests for files in the test group](#running-all-tests-for-files-in-the-test-group)
+- [Requirement](#requirements)
+- [Extension Settings](#extension-settings)
+
 ## Features
 
 ### Supported files
