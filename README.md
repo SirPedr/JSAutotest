@@ -5,6 +5,7 @@ Running tests for your files made easy. This extension allows you to run your te
 ## Table of Contents
 - [Features](#features)
     - [Supported files](#supported-files)
+    - [Supported test runners](#supported-test-runners)
     - [Running test command for a file](#running-test-command-for-a-file)
     - [Running test command for multiple files](#running-test-command-for-multiple-files)
         - [Adding a file to the test group](#adding-a-file-to-the-test-group)
@@ -17,7 +18,8 @@ Running tests for your files made easy. This extension allows you to run your te
 
 ### Supported files
 JS Autotest has built-in support for **JS, and TS files**.
-
+### Supported test runners
+At this time, JSAutotest supports Jest.
 ### Running test command for a file
 
 > Tip: You can also run this command  on non-test files. In this case, Autotest will try to find the correspondent test file according to your `autotest.testFilePattern` configuration.
