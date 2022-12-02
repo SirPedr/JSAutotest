@@ -22,7 +22,7 @@ JS Autotest has built-in support for **JS, and TS files**.
 At this time, JSAutotest supports Jest.
 ### Running test command for a file
 
-> Tip: You can also run this command  on non-test files. In this case, Autotest will try to find the correspondent test file according to your `autotest.testFilePattern` configuration.
+> Tip: You can also run this and any command that is executed through the context menu on non-test files. In this case, Autotest will try to find the correspondent test file according to your `autotest.testFilePattern` configuration.
 
 Right-click any of the [supported files](#supported-files), then select the option _Run tests for this file_. Autotest will then run your test script passing the file path as an argument to that script. 
 
