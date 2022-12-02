@@ -16,7 +16,7 @@ Running tests for your files made easy. This extension allows you to run your te
 ## Features
 
 ### Supported files
-JS Autotest has built-in support for **JS, JSX, TS and TSX files**.
+JS Autotest has built-in support for **JS, and TS files**.
 
 ### Running test command for a file
 
