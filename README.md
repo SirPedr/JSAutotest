@@ -24,12 +24,32 @@ At this time, JSAutotest supports Jest.
 
 > Tip: You can also run this command  on non-test files. In this case, Autotest will try to find the correspondent test file according to your `autotest.testFilePattern` configuration.
 
-Right-click any of the supported files, then select the option _Run tests for this file_. Autotest will then run your test script passing the file path as an argument to that script.
+Right-click any of the [supported files](#supported-files), then select the option _Run tests for this file_. Autotest will then run your test script passing the file path as an argument to that script. 
 
-![Example](https://im2.ezgif.com/tmp/ezgif-2-18c4a4e4f3.gif)
+Be aware that JSAutotest will create a new terminal named 'Autotest' to run the command. If a terminal with the same name already, exists, JSAutotest will use it instead.
+
+![Example](https://media.giphy.com/media/6mdv2H11dX01mwH7G4/giphy.gif)
 
 ### Running test command for multiple files
-To be implemented.
+You can run tests for multiple files at once adding them to what we call a 'test group'. A test group is a list of paths to your test files.
+
+#### Adding a file to the test group
+Right-click any of the [supported files](#supported-files) then select the option _Add to test group_. You should receive a success message if the operation ran without errors. Note that you can't add the same file to the test group more than once.
+
+![Example](https://media.giphy.com/media/4Wgq9CUg7ebbo09sDc/giphy.gif)
+
+#### Removing a file from the test group
+Right-click any of the [supported files](#supported-files) then select the option _Remove from test group_. If the file was in the test group, it will be removed and you should see a confirmation message.
+
+![Example](https://media.giphy.com/media/tUf7aIChXKS72OEaDq/giphy.gif)
+
+#### Running all tests for files in the test group
+Open the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) (`Ctrl + Shift + P` on Windows/Linux, `Command + Shift + P` on Mac) then type _Run tests for test group_. All tests included in the test group will run at once.
+
+
+This command follows the same terminal rules explained in [`Running test command for a file`](#running-test-command-for-a-file) section.
+
+![Example](https://media.giphy.com/media/BRPABHeG4Y2umI5oyF/giphy.gif)
 
 ## Requirements
 
