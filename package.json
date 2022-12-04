@@ -2,7 +2,8 @@
   "name": "js-autotest",
   "displayName": "JSAutotest",
   "description": "Running test for files made easy",
-  "version": "0.0.1",
+  "publisher": "SirPedr",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.73.0"
   },
