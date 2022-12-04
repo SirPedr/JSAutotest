@@ -2,6 +2,8 @@
 
 Running tests for your files made easy. This extension allows you to run your test command on one or more files with only 2 clicks, without having to copy the file paths every time or running all your tests at once.
 
+Add to VSCode: https://marketplace.visualstudio.com/items?itemName=SirPedr.js-autotest
+
 ## Table of Contents
 - [Features](#features)
     - [Supported files](#supported-files)
@@ -17,7 +19,7 @@ Running tests for your files made easy. This extension allows you to run your te
 ## Features
 
 ### Supported files
-JS Autotest has built-in support for **JS, and TS files**.
+JS Autotest has built-in support for **JS and TS files**.
 ### Supported test runners
 At this time, JSAutotest supports Jest.
 ### Running test command for a file
