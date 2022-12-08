@@ -52,7 +52,7 @@
       },
       {
         "command": "autotest.runInGroup",
-        "title": "Run tests for test group"
+        "title": "[Autotest] Run tests for test group"
       }
     ],
     "configuration": {
