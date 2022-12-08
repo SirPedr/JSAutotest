@@ -19,7 +19,7 @@ Add to VSCode: https://marketplace.visualstudio.com/items?itemName=SirPedr.js-au
 ## Features
 
 ### Supported files
-JS Autotest has built-in support for **JS and TS files**.
+JS Autotest has built-in support for **JS, TS, JSX and TSX files**.
 ### Supported test runners
 At this time, JSAutotest supports Jest.
 ### Running test command for a file
