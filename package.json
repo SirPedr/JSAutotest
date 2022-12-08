@@ -23,17 +23,17 @@
         {
           "command": "autotest.run",
           "group": "2_workspace",
-          "when": "resourceLangId == typescript || resourceLangId == javascript"
+          "when": "resourceLangId =~ /^typescript$|^javascript$|^typescriptreact$|^javascriptreact$/"
         },
         {
           "command": "autotest.addToGroup",
           "group": "2_workspace",
-          "when": "resourceLangId == typescript || resourceLangId == javascript"
+          "when": "resourceLangId =~ /^typescript$|^javascript$|^typescriptreact$|^javascriptreact$/"
         },
         {
           "command": "autotest.removeFromGroup",
           "group": "2_workspace",
-          "when": "resourceLangId == typescript || resourceLangId == javascript"
+          "when": "resourceLangId =~ /^typescript$|^javascript$|^typescriptreact$|^javascriptreact$/"
         }
       ]
     },
