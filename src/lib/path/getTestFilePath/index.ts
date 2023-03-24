@@ -4,7 +4,10 @@ import minimatch from "minimatch";
 
 export const getTestFilePath = async (filePath: string, pattern: string) => {
   const fileName = path.basename(filePath);
-  const isTestFile = minimatch(filePath, pattern);
+  const isTestFile = minimatch(
+    filePath,
+    `**/${pattern.replace("[name]", "*")}`
+  );
 
   if (isTestFile) {
     return filePath;
